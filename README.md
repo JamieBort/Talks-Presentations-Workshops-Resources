@@ -1,11 +1,11 @@
 
 
-Name: [Version Control Presentation](https://github.com/JamieBort/TalksPresentationsWorkshops/tree/master/Version%20Control%20Presentation)
+Name: [VersionControlPresentation](https://github.com/JamieBort/TalksPresentationsWorkshops/tree/master/Version%20Control%20Presentation)
 ```
 Descrition: 
 ```
 
-Name: []()
+Name: [FundamentalsOfD3.js](https://github.com/JamieBort/TalksPresentationsWorkshops/tree/master/FundamentalsOfD3.js)
 ```
 Descrition: 
 ```
