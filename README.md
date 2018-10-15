@@ -10,9 +10,9 @@ Name of Talk: [FundamentalsOfD3.js](https://github.com/JamieBort/TalksPresentati
 Descrition: 30 October 2018 for Modern Web (Triangle). Meetup URL: https://www.meetup.com/trianglemodernweb/
 ```
 
-Name of Talk: []()
+Name of Talk: [TheJavaScriptCallStackHoistingAndRelatedTopics](https://github.com/JamieBort/TheJavaScriptCallStackHoistingAndRelatedTopics)
 ```
-Descrition: 
+Descrition: [possibly to be moved into this repo]
 ```
 
 Name of Talk: []()
