@@ -12,7 +12,7 @@ Descrition: 30 October 2018 for Modern Web (Triangle). Meetup URL: https://www.m
 
 Name of Talk: [TheJavaScriptCallStackHoistingAndRelatedTopics](https://github.com/JamieBort/TheJavaScriptCallStackHoistingAndRelatedTopics)
 ```
-Descrition: [possibly to be moved into this repo]
+Descrition: [Notice, this is it's own repo. Possibly to be moved into this repo.]
 ```
 
 Name of Talk: []()
