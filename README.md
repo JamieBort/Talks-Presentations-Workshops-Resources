@@ -13,6 +13,7 @@ Descrition: 30 October 2018 for Modern Web (Triangle). Meetup URL: https://www.m
 Name of Talk: [TheJavaScriptCallStackHoistingAndRelatedTopics](https://github.com/JamieBort/TheJavaScriptCallStackHoistingAndRelatedTopics)
 ```
 Descrition: [Notice, this is it's own repo. Possibly to be moved into this repo.]
+31 October - 2 November 2018 for CodeTheDream. http://codethedream.org
 ```
 
 Name of Talk: []()
