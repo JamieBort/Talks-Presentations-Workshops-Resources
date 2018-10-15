@@ -1,0 +1,35 @@
+<!-- NOTE: I repleaced all double quotes with single quotes. This was necessary for the file to work. -->
+
+<html>
+<head>
+    <title>A Short Introduction to D3.js</title>
+</head>
+<body>
+        <!-- <div class='chart'></div> -->
+    <style>
+        .chart div {
+            font: 10px sans-serif;
+            text-align: right;
+            background-color: #00cc66;
+            color: white;
+            padding: 20px;
+            margin: 5px;
+        }
+    </style>
+    <div class='chart'></div>
+
+    <!-- <script src=”d3.js”></script> --> <!-- // This didn't work. So I used the line of code below.-->
+    <script src='https://d3js.org/d3.v4.min.js'></script>
+    <script>
+        var data = [8, 16, 18, 20, 18, 35, 22, 25, 27];
+        var x = d3.scaleLinear()
+            .domain([0, d3.max(data)])
+            .range([0, 420]);
+        d3.select('.chart')
+            .selectAll('div')
+            .data(data)
+            .enter().append('div')
+            .style('width', function (d) { return x(d) + 'px'; }).text(function (d) { return d; });
+    </script>
+</body>
+</html>
