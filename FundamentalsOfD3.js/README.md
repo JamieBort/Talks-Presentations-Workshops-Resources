@@ -6,3 +6,5 @@ and
 http://sxywu.com/d3intro/
 and
 https://www.google.com/search?q=intro+to+D3.js&oq=intro+to+D3.js&aqs=chrome..69i57.2912j0j4&sourceid=chrome&ie=UTF-8
+
+and: http://learnjsdata.com/read_data.html
