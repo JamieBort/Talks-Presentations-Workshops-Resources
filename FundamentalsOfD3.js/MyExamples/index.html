@@ -1,1 +1,101 @@
 <!-- Test -->
+
+<!-- *** First Video *** -->
+<!-- ******************* -->
+
+<!-- <html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <title>Learn D3.js</title>
+    </head>
+    <body>
+        
+        <h1>First heading</h1> 
+        
+        <!-- loads d3.js file from it's official link. -->
+<!-- <script src="https://d3js.org/d3.v4.min.js"></script> 
+        <!-- loads our javascript file -->
+<!-- <script src="index.js"></script> 
+        
+    </body>
+</html> -->
+
+
+<!-- *** Fourth Video *** -->
+<!-- ******************** -->
+<!-- <html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <title>Learn D3.js</title>
+    </head>
+    <body>
+        
+        <h1>Bar Chart using D3.js</h1>
+        <svg class="bar-chart"></svg>
+        
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="index.js"></script> 
+        
+    </body>
+</html> -->
+
+
+<!-- *** Seventh Video *** -->
+<!-- ******************** -->
+
+<html>
+
+<head>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <title>Learn D3.js</title>
+    <style>
+        .bar-chart {
+            background-color: #C7D9D9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Bar Chart using D3.js</h1>
+
+    <svg></svg>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script>
+
+        // var dataset = [1, 2, 3, 4, 5];
+
+        // d3.csv("../Data/NationalBabyNames/cities.csv", function(data) {
+        //   console.log(data[0]);
+        // });
+
+        d3.csv("../Data/NationalBabyNames/cities.csv", function (data) {
+            data.forEach(function (d) {
+                // d.population = +d.population;
+                // d["land area"] = +d["land area"];
+                console.log(d.population);
+            });
+            console.log(data[0]);
+        });
+
+// What my data looks like:
+// city,state,population,land area
+// seattle,WA,652405,83.9
+// new york,NY,8405837,302.6
+// boston,MA,645966,48.3
+// kansas city,MO,467007,315.0
+
+    // d3.select('body') // The body is selected.
+    //      .selectAll('p') // All paragraph tags are selected. There are none, so an empty selection is returned.
+    //      .data(dataset) // .data() method is called. dataset is passed as the argument. This method will put data in the waiting state for further processing.
+    //      .enter() // .enter() method is called. Will take data items one by one and perform further operations on them.
+    //      .append('p') // For each data item we're appending a paragraph tag,
+    //      // .text('D3 is awesome!!'); // and binding some text inside it.
+    // .text(function (d) { return d; }); // Thie function will get teh value of data item, d and return it.
+
+    </script>
+
+</body>
+
+</html>
