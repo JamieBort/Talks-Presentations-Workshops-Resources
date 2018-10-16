@@ -1,3 +1,8 @@
+# I am not ready to upload csv files yet. Also, I am not sure if I want all csv files to be ignored in this repository or just the FundamentalsOfD3.js directory.
+# To that end, from: https://www.atlassian.com/git/tutorials/saving-changes/gitignore#git-ignore-patterns
+# "Git ignore rules are usually defined in a .gitignore file at the root of your repository. However, you can choose to define multiple .gitignore files in different directories in your repository. Each pattern in a particular .gitignore file is tested relative to the directory containing that file. However the convention, and simplest approach, is to define a single .gitignore file in the root. As your .gitignore file is checked in, it is versioned like any other file in your repository and shared with your teammates when you push. Typically you should only include patterns in .gitignore that will benefit other users of the repository."
 *.csv
+
+# These two file types are not needed in my repo.
 *.zip
 .DS_Store
