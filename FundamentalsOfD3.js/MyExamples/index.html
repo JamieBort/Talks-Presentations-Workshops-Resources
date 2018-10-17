@@ -3,17 +3,24 @@
 <head>
     <title>Learn D3.js</title>
     <style>
-        .bar-chart,two {
+        .bar-chart {
             background-color: #C7D9D9;
         }
+
+        /* div {
+            height: 500px;
+            background-color: rgb(183, 211, 58);
+        } */
     </style>
 </head>
 
 <body>
     <h1>Bar Chart using D3.js</h1>
-    <svg class="bar-chart"></svg>
+    <!-- <div> -->
+        <svg class="bar-chart"></svg>
+    <!-- </div> -->
 
-    <svg class="bar-chart"></svg>
+
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script>
@@ -27,7 +34,7 @@
 
             var svgWidth = 500;
 
-            var barWidth = (svgWidth / dataset.length);
+            var barWidth = ((svgWidth / dataset.length) - 3 ); // - 3 makes the bars more narrow.
 
             var svg = d3.select('svg')
                 .attr("width", svgWidth)
@@ -35,8 +42,8 @@
 
             var yScale = d3.scaleLinear()
                 .domain([0, d3.max(dataset)])
-                .range([0, svgHeight]);
-                
+                .range([0, svgHeight-40]); // -40 brings the height of the bars down.
+
 
             // The bar chart
             var barChart = svg.selectAll("rect")
@@ -53,7 +60,7 @@
                 })
                 .attr("width", barWidth - barPadding)
                 .attr("transform", function (d, i) {
-                    var translate = [(barWidth * i) + (barPadding) / 2, 0];
+                    var translate = [12 + (barWidth * i) + (barPadding) / 2, -20]; // -20 brings the bars up. 12 moves the bars right.
                     return "translate(" + translate + ")";
                 });
 
@@ -73,7 +80,7 @@
                 .scale(yScaleAxis);
 
             svg.append("g") // "g" for group element.
-                .attr("transform", "translate(50, 10)")
+                .attr("transform", "translate(10, 10)")
                 .call(y_axis);
 
             var xAxisTranslate = svgHeight - 20;
@@ -91,11 +98,11 @@
                     return d;
                 })
                 .attr('y', function (d, i) {
-                    return svgHeight - d - 4;
+                    return svgHeight - d - 8;
                 })
                 .attr('x', function (d, i) {
-                    return (barWidth * i) + (barWidth - barPadding) / 2 - 8;
-                })
+                    return (barWidth * i) + (barWidth - barPadding) / 2 + 4;
+                }) // +4 moves the numbers right.
                 .attr("fill", "#A64C38");
 
         });
