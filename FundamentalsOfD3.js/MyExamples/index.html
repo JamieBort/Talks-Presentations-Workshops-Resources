@@ -2,111 +2,17 @@
 
 <head>
     <title>Learn D3.js</title>
-    <style>
-        .bar-chart {
-            background-color: #C7D9D9;
-        }
-
-        /* div {
-            height: 500px;
-            background-color: rgb(183, 211, 58);
-        } */
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <h1>Bar Chart using D3.js</h1>
     <!-- <div> -->
-        <svg class="bar-chart"></svg>
+    <svg class="bar-chart"></svg>
     <!-- </div> -->
 
-
-
     <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script>
-        let dataset = [];
-        d3.csv("../Data/NationalBabyNames/cities.csv", function (data) {
-            data.forEach(function (d) {
-                console.log(d['land area']);
-                dataset.push(parseInt(d['land area']));
-            });
-            var svgHeight = 300, barPadding = 5;
-
-            var svgWidth = 500;
-
-            var barWidth = ((svgWidth / dataset.length) - 3 ); // - 3 makes the bars more narrow.
-
-            var svg = d3.select('svg')
-                .attr("width", svgWidth)
-                .attr("height", svgHeight);
-
-            var yScale = d3.scaleLinear()
-                .domain([0, d3.max(dataset)])
-                .range([0, svgHeight-40]); // -40 brings the height of the bars down.
-
-
-            // The bar chart
-            var barChart = svg.selectAll("rect")
-                .data(dataset)
-                .enter()
-                .append("rect")
-                .attr("y", function (d) {
-                    // return svgHeight - d;
-                    return svgHeight - yScale(d);
-                })
-                .attr("height", function (d) {
-                    // return d;
-                    return yScale(d);
-                })
-                .attr("width", barWidth - barPadding)
-                .attr("transform", function (d, i) {
-                    var translate = [12 + (barWidth * i) + (barPadding) / 2, -20]; // -20 brings the bars up. 12 moves the bars right.
-                    return "translate(" + translate + ")";
-                });
-
-            // The Axes
-            var xScaleAxis = d3.scaleLinear()
-                .domain([0, d3.max(data)])
-                .range([0, svgWidth]);
-
-            var yScaleAxis = d3.scaleLinear()
-                .domain([0, d3.max(data)])
-                .range([svgHeight, 0]);
-
-            var x_axis = d3.axisBottom() // .axisBottom returns a function which we chain with another function, .scale
-                .scale(xScaleAxis); // We then pass xScale through our function, .scale.
-
-            var y_axis = d3.axisLeft()
-                .scale(yScaleAxis);
-
-            svg.append("g") // "g" for group element.
-                .attr("transform", "translate(10, 10)")
-                .call(y_axis);
-
-            var xAxisTranslate = svgHeight - 20;
-
-            svg.append("g")
-                .attr("transform", "translate(50, " + xAxisTranslate + ")")
-                .call(x_axis);
-
-            // Bar height text
-            var text = svg.selectAll('text')
-                .data(dataset)
-                .enter()
-                .append('text')
-                .text(function (d) {
-                    return d;
-                })
-                .attr('y', function (d, i) {
-                    return svgHeight - d - 8;
-                })
-                .attr('x', function (d, i) {
-                    return (barWidth * i) + (barWidth - barPadding) / 2 + 4;
-                }) // +4 moves the numbers right.
-                .attr("fill", "#A64C38");
-
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
