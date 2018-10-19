@@ -5,9 +5,10 @@ d3.csv("../Data/NationalBabyNames/cities.csv", function (data) {
         console.log(d['land area']);
         dataset.push(parseInt(d['land area']));
     });
-    var svgWidth = 500, svgHeight = 300, barPadding = 5, shiftRight = 25, shiftUp = 15; // Shift the axis, bars, and text right. Shift the axis and bars up.
+    var svgWidth = 500, svgHeight = 300, barPadding = 5, shiftRight = 30, shiftUp = 15; // 'shiftRight' shifts the axis, bars, and text right. 'shiftUp' shift the axis, bars, and text up. 'barWidth' makes the bars more narrow.
+    // , barWidth = 4
 
-    var barWidth = ((svgWidth / dataset.length) - 3); // - 3 makes the bars more narrow.
+    var barWidth = ((svgWidth / dataset.length)-0);
 
     var svg = d3.select('svg')
         .attr("width", svgWidth)
