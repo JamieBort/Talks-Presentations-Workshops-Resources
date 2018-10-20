@@ -1,6 +1,6 @@
 
 var dataset = [];
-d3.csv("../Data/NationalBabyNames/cities.csv", function (data) {
+d3.csv("../../Data/NationalBabyNames/cities.csv", function (data) {
     data.forEach(function (d) {
         console.log(d);
         console.log(d['land area']);
