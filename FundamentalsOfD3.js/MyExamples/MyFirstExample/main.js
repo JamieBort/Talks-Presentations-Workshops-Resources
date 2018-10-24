@@ -2,16 +2,19 @@
 var dataset = [];
 d3.csv("../../Data/NationalBabyNames/cities.csv", function (data) {
     data.forEach(function (d) {
-        console.log(d);
-        console.log(d['land area']);
+        // console.log(d); // Not needed.
+        // console.log(d['land area']); // Not needed.
         dataset.push(parseInt(d['land area']));
     });
+
+    // *** Define Our Variables ***
     var svgWidth = 800, svgHeight = 300, barPadding = 10, shiftRight = 0, shiftUp = 0; // 'shiftRight' shifts the axis, bars, and text right. 'shiftUp' shift the axis, bars, and text up. 'barWidth' makes the bars more narrow.
-    // , barWidth = 4
 
     var barWidth = ((svgWidth / dataset.length) + (barPadding / 2));
 
     var svg = d3.select('svg')
+        .style('margin-top','20')
+        .style('padding','40')
         .attr("width", svgWidth)
         .attr("height", svgHeight)
         .attr("display", "block");
@@ -20,7 +23,7 @@ d3.csv("../../Data/NationalBabyNames/cities.csv", function (data) {
         .domain([0, d3.max(dataset)])
         .range([0, svgHeight]);
 
-    // The bar chart
+    // *** The bar chart ***
     var barChart = svg.selectAll("rect")
         .data(dataset)
         .enter()
@@ -33,12 +36,12 @@ d3.csv("../../Data/NationalBabyNames/cities.csv", function (data) {
         })
         .attr("width", barWidth - (barPadding / 2)) // I replaced 'barWidth' with 'barWidth - (barPadding/2)'.
         .attr("transform", function (d, i) {
-            var translate = [(barWidth * i) + shiftRight - 0, - shiftUp]; // 'shiftRight' moves the bars right. 
+            var translate = [(barWidth * i) + shiftRight, - shiftUp]; // 'shiftRight' moves the bars right. 
             // var translate = [((barWidth * i) + (barPadding) / 2) + shiftRight - 0, - shiftUp]; // 'shiftRight' moves the bars right. 'shiftUp' brings the bars up.
             return "translate(" + translate + ")";
         });
 
-    // *** Bar height text ***
+    // *** Bar height text *** see https://scrimba.com/p/pb4WsX/c4WLes8
     var text = svg.selectAll('text')
         .data(dataset)
         .enter()
@@ -54,7 +57,7 @@ d3.csv("../../Data/NationalBabyNames/cities.csv", function (data) {
         })
         .attr("fill", "#A64C38");
 
-    // *** The Axes ***
+    // *** The Axes *** see https://scrimba.com/p/pb4WsX/c6rwbhr
     var xScaleAxis = d3.scaleLinear()
         .domain([0, d3.max(dataset)])
         .range([0, svgWidth]);
@@ -80,5 +83,52 @@ d3.csv("../../Data/NationalBabyNames/cities.csv", function (data) {
     // svg.append("g")
     // .attr("transform", "translate(" + shiftRight + "," + xAxisTranslate + ")") // 'shiftRight' moves the x-axis right. 'xAxisTranslate' shifts the x-axis in.
     // .call(x_axis);
+
+    // *** The Pie Chart *** see https://scrimba.com/p/pb4WsX/cPyPVAr
+    
+var data2 = [
+    {"platform": "Android", "percentage": 40.11}, 
+    {"platform": "Windows", "percentage": 36.69},
+    {"platform": "iOS", "percentage": 13.06}
+];
+
+var svgWidth2 = 500, svgHeight2 = 300, radius =  Math.min(svgWidth2, svgHeight2) / 2;
+var svg2 = d3.select('.pie-chart')
+    .attr("width", svgWidth2)
+    .attr("height", svgHeight2);
+
+//Create group element to hold pie chart    
+var g = svg2.append("g")
+    .attr("transform", "translate(" + radius + "," + radius + ")") ;
+
+var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+var pie = d3.pie().value(function(d) { 
+     return d.percentage; 
+});
+
+var path = d3.arc()
+    .outerRadius(radius)
+    .innerRadius(0);
+ 
+var arc = g.selectAll("arc")
+    .data(pie(data2))
+    .enter()
+    .append("g");
+
+arc.append("path")
+    .attr("d", path)
+    .attr("fill", function(d) { return color(d.data.percentage); });
+        
+var label = d3.arc()
+    .outerRadius(radius)
+    .innerRadius(0);
+            
+arc.append("text")
+    .attr("transform", function(d) { 
+        return "translate(" + label.centroid(d) + ")"; 
+    })
+    .attr("text-anchor", "middle")
+    .text(function(d) { return d.data.platform+":"+d.data.percentage+"%"; });
 
 });
