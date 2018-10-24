@@ -1,10 +1,16 @@
 
+
+// var test = require(../../Data/NationalBabyNames/citiesObject.js);
+var test = require('./../../Data/NationalBabyNames/citiesObject.js') 
+
 var dataset = [];
+var dataset2 = [];
 d3.csv("../../Data/NationalBabyNames/cities.csv", function (data) {
     data.forEach(function (d) {
         // console.log(d); // Not needed.
         // console.log(d['land area']); // Not needed.
         dataset.push(parseInt(d['land area']));
+        dataset2.push(parseInt(d['land area']));
     });
 
     // *** Define Our Variables ***
@@ -13,8 +19,8 @@ d3.csv("../../Data/NationalBabyNames/cities.csv", function (data) {
     var barWidth = ((svgWidth / dataset.length) + (barPadding / 2));
 
     var svg = d3.select('svg')
-        .style('margin-top','20')
-        .style('padding','40')
+        .style('margin-top', '20')
+        .style('padding', '40')
         .attr("width", svgWidth)
         .attr("height", svgHeight)
         .attr("display", "block");
@@ -85,50 +91,54 @@ d3.csv("../../Data/NationalBabyNames/cities.csv", function (data) {
     // .call(x_axis);
 
     // *** The Pie Chart *** see https://scrimba.com/p/pb4WsX/cPyPVAr
-    
-var data2 = [
-    {"platform": "Android", "percentage": 40.11}, 
-    {"platform": "Windows", "percentage": 36.69},
-    {"platform": "iOS", "percentage": 13.06}
-];
 
-var svgWidth2 = 500, svgHeight2 = 300, radius =  Math.min(svgWidth2, svgHeight2) / 2;
-var svg2 = d3.select('.pie-chart')
-    .attr("width", svgWidth2)
-    .attr("height", svgHeight2);
+    var data2 = [
+        { "platform": "Android", "percentage": 40.11 },
+        { "platform": "Windows", "percentage": 36.69 },
+        { "platform": "iOS", "percentage": 13.06 }
+    ];
 
-//Create group element to hold pie chart    
-var g = svg2.append("g")
-    .attr("transform", "translate(" + radius + "," + radius + ")") ;
+    var svgWidth2 = 500, svgHeight2 = 300, radius = Math.min(svgWidth2, svgHeight2) / 2;
+    var svg2 = d3.select('.pie-chart')
+        .attr("width", svgWidth2)
+        .attr("height", svgHeight2);
 
-var color = d3.scaleOrdinal(d3.schemeCategory10);
+    //Create group element to hold pie chart    
+    var g = svg2.append("g")
+        .attr("transform", "translate(" + radius + "," + radius + ")");
 
-var pie = d3.pie().value(function(d) { 
-     return d.percentage; 
-});
+    var color = d3.scaleOrdinal(d3.schemeCategory10);
 
-var path = d3.arc()
-    .outerRadius(radius)
-    .innerRadius(0);
- 
-var arc = g.selectAll("arc")
-    .data(pie(data2))
-    .enter()
-    .append("g");
+    var pie = d3.pie().value(function (d) {
+        return d.percentage;
+    });
 
-arc.append("path")
-    .attr("d", path)
-    .attr("fill", function(d) { return color(d.data.percentage); });
-        
-var label = d3.arc()
-    .outerRadius(radius)
-    .innerRadius(0);
-            
-arc.append("text")
-    .attr("transform", function(d) { 
-        return "translate(" + label.centroid(d) + ")"; 
-    })
-    .attr("text-anchor", "middle")
-    .text(function(d) { return d.data.platform+":"+d.data.percentage+"%"; });
+    var path = d3.arc()
+        .outerRadius(radius)
+        .innerRadius(0);
+
+    var arc = g.selectAll("arc")
+        .data(pie(data2))
+        .enter()
+        .append("g");
+
+    arc.append("path")
+        .attr("d", path)
+        .attr("fill", function (d) { return color(d.data.percentage); });
+
+    var label = d3.arc()
+        .outerRadius(radius)
+        .innerRadius(0);
+
+    arc.append("text")
+        .attr("transform", function (d) {
+            return "translate(" + label.centroid(d) + ")";
+        })
+        .attr("text-anchor", "middle")
+        .text(function (d) { return d.data.platform + ":" + d.data.percentage + "%"; });
+
+    console.log(dataset);
+    // console.log('../../Data/NationalBabyNames/citiesObject.js/myObect[0]');
+    console.log(test);
 
 });
