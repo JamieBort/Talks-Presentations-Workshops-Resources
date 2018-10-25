@@ -1,9 +1,9 @@
-export function addTextToBody(text) {
-    console.log(text);
+// export function addTextToBody(text) {
+//     console.log(text);
     // const div = document.createElement('div');
     // div.textContent = text;
     // document.body.appendChild(div);
-  }
+  // }
 
 
 // var text = "Hello world!";
