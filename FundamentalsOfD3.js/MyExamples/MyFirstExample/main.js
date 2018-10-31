@@ -1,18 +1,19 @@
 var dataset = [];
-var dataset2 = [];
 d3.csv("../../Data/NationalBabyNames/cities.csv", function (data) {
     data.forEach(function (d) {
         // console.log(d); // Not needed.
         // console.log(d['land area']); // Not needed.
         dataset.push(parseInt(d['land area']));
-        dataset2.push(d);
     });
 
+
     // *** Define Our Variables ***
-    var svgWidth = 800, svgHeight = 300, barPadding = 10, shiftRight = 0, shiftUp = 0; // 'shiftRight' shifts the axis, bars, and text right. 'shiftUp' shift the axis, bars, and text up. 'barWidth' makes the bars more narrow.
+    var svgWidth = 800, svgHeight = 300, barPadding = 10; // 'barWidth' makes the bars more narrow.
 
     var barWidth = ((svgWidth / dataset.length) + (barPadding / 2));
 
+
+    // *** Selecting the SVG Tag ***
     var svg = d3.select('svg')
         .style('margin-top', '20')
         .style('padding', '40')
@@ -20,9 +21,12 @@ d3.csv("../../Data/NationalBabyNames/cities.csv", function (data) {
         .attr("height", svgHeight)
         .attr("display", "block");
 
+
+    // *** Defining the scale ***
     var yScale = d3.scaleLinear()
         .domain([0, d3.max(dataset)])
         .range([0, svgHeight]);
+
 
     // *** The bar chart ***
     var barChart = svg.selectAll("rect")
@@ -35,12 +39,12 @@ d3.csv("../../Data/NationalBabyNames/cities.csv", function (data) {
         .attr("height", function (d) {
             return yScale(d);
         })
-        .attr("width", barWidth - (barPadding / 2)) // I replaced 'barWidth' with 'barWidth - (barPadding/2)'.
+        .attr("width", barWidth - (barPadding / 2))
         .attr("transform", function (d, i) {
-            var translate = [(barWidth * i) + shiftRight, - shiftUp]; // 'shiftRight' moves the bars right. 
-            // var translate = [((barWidth * i) + (barPadding) / 2) + shiftRight - 0, - shiftUp]; // 'shiftRight' moves the bars right. 'shiftUp' brings the bars up.
+            var translate = [(barWidth * i), 0];
             return "translate(" + translate + ")";
         });
+
 
     // *** Bar height text *** see https://scrimba.com/p/pb4WsX/c4WLes8
     var text = svg.selectAll('text')
@@ -51,64 +55,49 @@ d3.csv("../../Data/NationalBabyNames/cities.csv", function (data) {
             return d;
         })
         .attr('y', function (d, i) {
-            return svgHeight - yScale(d) - shiftUp - 5; // -shiftUp shifts the text up.
+            return svgHeight - yScale(d) - 5;
         })
         .attr('x', function (d, i) {
-            return ((barWidth * i) + (barWidth - barPadding) / 2) + shiftRight; // 'shiftRight' shifts the text right. Replaced '(barWidth * i)' with '((barWidth * i) ) + shiftRight'.
+            return ((barWidth * i) + (barWidth - barPadding) / 2); // Replaced '(barWidth * i)' with '((barWidth * i) )'.
         })
         .attr("fill", "#A64C38");
 
+
     // *** The Axes *** see https://scrimba.com/p/pb4WsX/c6rwbhr
-    var xScaleAxis = d3.scaleLinear()
-        .domain([0, d3.max(dataset)])
-        .range([0, svgWidth]);
+
+    // remove this - not used
+    // var xScaleAxis = d3.scaleLinear()
+    // .domain([0, d3.max(dataset)])
+    // .range([0, svgWidth]);
 
     var yScaleAxis = d3.scaleLinear()
         .domain([0, d3.max(dataset)])
         .range([svgHeight, 0]);
 
-    // The following is not used for this example.
-    // var x_axis = d3.axisBottom() // .axisBottom returns a function which we chain with another function, .scale
-    // .scale(xScaleAxis); // We then pass xScale through our function, .scale.
-
     var y_axis = d3.axisLeft()
         .scale(yScaleAxis);
 
     svg.append("g") // "g" for group element.
-        .attr("transform", "translate(" + shiftRight + ", -" + shiftUp + ")") // 'shiftRight' moves the y-axis right. 'shiftUp' shifts the y-axis up.
         .call(y_axis);
 
-    var xAxisTranslate = svgHeight - shiftUp; // 'shiftUp' moves the x-axis down. 'xAxisTranslate' brings the x-axis down from the top of the svg.
-
-    // The following is not used for this example.
-    // svg.append("g")
-    // .attr("transform", "translate(" + shiftRight + "," + xAxisTranslate + ")") // 'shiftRight' moves the x-axis right. 'xAxisTranslate' shifts the x-axis in.
-    // .call(x_axis);
 
     // *** The Pie Chart *** see https://scrimba.com/p/pb4WsX/cPyPVAr
-
-    // var data2 = [
-    //     { "platform": "Android", "percentage": 40.11 },
-    //     { "platform": "Windows", "percentage": 36.69 },
-    //     { "platform": "iOS", "percentage": 13.06 }
-    // ];
-
     var data2 = [
-        { "platform": dataset2[0].city, "percentage": dataset2[0][`land area`] },
-        { "platform": dataset2[1].city, "percentage": dataset2[1][`land area`] },
-        { "platform": dataset2[2].city, "percentage": dataset2[2][`land area`] },
-        { "platform": dataset2[3].city, "percentage": dataset2[3][`land area`] },
-        { "platform": dataset2[4].city, "percentage": dataset2[4][`land area`] },
-        { "platform": dataset2[5].city, "percentage": dataset2[5][`land area`] },
-        { "platform": dataset2[6].city, "percentage": dataset2[6][`land area`] },
-        { "platform": dataset2[7].city, "percentage": dataset2[7][`land area`] }
+        { "platform": data[0].city, "percentage": data[0][`land area`] },
+        { "platform": data[1].city, "percentage": data[1][`land area`] },
+        { "platform": data[2].city, "percentage": data[2][`land area`] },
+        { "platform": data[3].city, "percentage": data[3][`land area`] },
+        { "platform": data[4].city, "percentage": data[4][`land area`] },
+        { "platform": data[5].city, "percentage": data[5][`land area`] },
+        { "platform": data[6].city, "percentage": data[6][`land area`] },
+        { "platform": data[7].city, "percentage": data[7][`land area`] }
     ];
-
 
     var svgWidth2 = 500, svgHeight2 = 300, radius = Math.min(svgWidth2, svgHeight2) / 2;
     var svg2 = d3.select('.pie-chart')
         .attr("width", svgWidth2)
-        .attr("height", svgHeight2);
+        .attr("height", svgHeight2)
+        .attr("display", "block");
 
     //Create group element to hold pie chart    
     var g = svg2.append("g")
@@ -131,7 +120,9 @@ d3.csv("../../Data/NationalBabyNames/cities.csv", function (data) {
 
     arc.append("path")
         .attr("d", path)
-        .attr("fill", function (d) { return color(d.data.percentage); });
+        .attr("fill", function (d) {
+            return color(d.data.percentage);
+        });
 
     var label = d3.arc()
         .outerRadius(radius)
@@ -142,16 +133,7 @@ d3.csv("../../Data/NationalBabyNames/cities.csv", function (data) {
             return "translate(" + label.centroid(d) + ")";
         })
         .attr("text-anchor", "middle")
-        .text(function (d) { return d.data.platform + ":" + d.data.percentage + "%"; });
-
-        // *** Console Log/Display data. ***
-    console.log(dataset);
-    console.log(dataset2[0][`land area`]);
-    dataset2.forEach(element => {
-        console.log(element.city);
-    });
-    // console.log('../../Data/NationalBabyNames/citiesObject.js/myObect[0]');
-    // console.log(test);
-
-
+        .text(function (d) {
+            return d.data.platform + ":" + d.data.percentage + "%";
+        });
 });
