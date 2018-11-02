@@ -16,9 +16,9 @@ Descrition: [Notice, this is it's own repo. Possibly to be moved into this repo.
 31 October - 2 November 2018 for CodeTheDream. http://codethedream.org
 ```
 
-Name of Talk: []()
+Name of Talk: [JavaScriptConceptsForCodeTheDream](https://github.com/JamieBort/TalksPresentationsWorkshops/tree/master/JavaScriptConceptsForCodeTheDream)
 ```
-Descrition: 
+Descrition: Had a casual convresation with [Code The Dream](http://codethedream.org) students 1 November 2018. Daisy Magnus organized it.
 ```
 
 Name of Talk: []()
