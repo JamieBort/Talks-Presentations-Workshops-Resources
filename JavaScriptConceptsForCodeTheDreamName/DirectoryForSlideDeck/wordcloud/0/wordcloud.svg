@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1024px" height="768px" viewBox="0 0 1024 768">
+<clipPath id="cp1">
+<path d="M 0,0 L 1024,0 L1024,768 L 0,768 z M 0,0 L 1280,0 L 1280,960 L 0,960 z" fill-rule="evenodd">
+</path>
+</clipPath>
+<g clip-path="url(#cp1)">
+</g>
+<rect x="0" y="0" width="1280" height="960" opacity="1" fill="#fff" stroke="none">
+</rect>
+<text x="-40.30607604980469" y="5.283146232" style="font: normal 52.831462320000014px 'Palatino Linotype','Book Antiqua',Palatino,serif" text-anchor="start" dy="20.882000916996056" opacity="1" fill="#314ed4" stroke="none" transform="translate(522, 388)">call</text>
+<text x="-59.433738708496094" y="5.283146232" style="font: normal 52.831462320000014px 'Palatino Linotype','Book Antiqua',Palatino,serif" text-anchor="start" dy="20.882000916996056" opacity="1" fill="#60a831" stroke="none" transform="translate(534, 424)">stack</text>
+<text x="-149.6677703857422" y="5.283146232" style="font: normal 52.831462320000014px 'Palatino Linotype','Book Antiqua',Palatino,serif" text-anchor="start" dy="20.882000916996056" opacity="1" fill="#9000a8" stroke="none" transform="translate(636, 424) rotate(-33.6637502942145)">synchronous</text>
+<text x="-162.87525939941406" y="5.283146232" style="font: normal 52.831462320000014px 'Palatino Linotype','Book Antiqua',Palatino,serif" text-anchor="start" dy="20.882000916996056" opacity="1" fill="#31a5d4" stroke="none" transform="translate(626, 218) rotate(47.20382636622811)">asynchronous</text>
+<text x="-104.86030578613281" y="5.283146232" style="font: normal 52.831462320000014px 'Palatino Linotype','Book Antiqua',Palatino,serif" text-anchor="start" dy="20.882000916996056" opacity="1" fill="#9000a8" stroke="none" transform="translate(458, 142) rotate(24.264393595272455)">structure</text>
+<text x="-51.16615295410156" y="5.283146232" style="font: normal 52.831462320000014px 'Palatino Linotype','Book Antiqua',Palatino,serif" text-anchor="start" dy="20.882000916996056" opacity="1" fill="#31a5d4" stroke="none" transform="translate(596, 348)">data</text>
+<text x="-74.27925872802734" y="5.283146232" style="font: normal 52.831462320000014px 'Palatino Linotype','Book Antiqua',Palatino,serif" text-anchor="start" dy="20.882000916996056" opacity="1" fill="#9000a8" stroke="none" transform="translate(540, 592)">lexical</text>
+<text x="-150.36424255371094" y="5.283146232" style="font: normal 52.831462320000014px 'Palatino Linotype','Book Antiqua',Palatino,serif" text-anchor="start" dy="20.882000916996056" opacity="1" fill="#314ed4" stroke="none" transform="translate(666, 174) rotate(33.83047296038984)">environment</text>
+<text x="-83.57868957519531" y="5.283146232" style="font: normal 52.831462320000014px 'Palatino Linotype','Book Antiqua',Palatino,serif" text-anchor="start" dy="20.882000916996056" opacity="1" fill="#31a5d4" stroke="none" transform="translate(540, 654) rotate(-28.872847952731536)">closure</text>
+<text x="-65.86981964111328" y="5.283146232" style="font: normal 52.831462320000014px 'Palatino Linotype','Book Antiqua',Palatino,serif" text-anchor="start" dy="20.882000916996056" opacity="1" fill="#60a831" stroke="none" transform="translate(392, 220) rotate(77.55445373256454)">scope</text>
+</svg>
