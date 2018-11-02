@@ -1,0 +1,1 @@
+these images are from: https://medium.com/front-end-hacking/javascript-event-loop-explained-4cd26af121d4
