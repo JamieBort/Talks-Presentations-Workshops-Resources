@@ -26,9 +26,9 @@ Name of Talk: [VersionControlPresentation](https://github.com/JamieBort/TalksPre
 Descrition: 13 December 2017 for Triangle Junior Developers. Meetup URL: https://www.meetup.com/Triangle-Adult-Junior-Developers/events/245096432/
 ```
 
-Name of Talk: []()
+Name of Talk: [RoundingErrorsJavaLightingTalk](https://github.com/JamieBort/TalksPresentationsWorkshops/tree/master/RoundingErrorsJavaLightingTalk)
 ```
-Descrition: 
+Descrition: RoundingErrors Java LightingTalk
 ```
 
 Name of Talk: []()
