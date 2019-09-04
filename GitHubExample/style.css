@@ -1,0 +1,81 @@
+/**{border: 1px black solid;}*/
+
+body {
+  background-color: lightblue;
+  text-align: center;
+}
+h1{
+  font-size: 2em;
+}
+#contact{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+#sectionOne{
+  /*border: 1px solid black;*/
+  width: 80%;
+  margin: auto;
+}
+#sectionTwo{
+  /*border: 1px solid black;*/
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+#bio {
+  width: 78%;
+  margin: 3% auto;
+  /*border: 1px solid black;*/
+}
+
+
+.SocialLinks {
+  /*margin: 10px;*/
+  /*border: 1px solid black;*/
+  height: 60px;
+}
+
+.Social {
+  margin: .5em;
+  height: 3em;
+  widht: auto;
+}
+#linkExamples{
+  /*border: 2px red solid;*/
+  display: flex;
+  justify-content: center;
+}
+
+#resumeDiv{
+  margin-top: 30px;
+}
+
+.linkImg{
+  border: 4px solid yellow
+  margin: 50%;
+  /*buffer: 30%;*/
+  height: 500px;
+  width: auto;
+}
+
+footer {
+  border: 1px solid black;
+}
+
+
+/*for tablets*/
+
+@@media query {}
+
+/*limit size of resume image*/
+
+
+/*for desktop*/
+
+@@media query {}
+
+/*limit size of resume image*/
