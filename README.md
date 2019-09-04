@@ -7,7 +7,7 @@ Descrition: 30 October 2018 for Modern Web (Triangle). Meetup URL: https://www.m
 
 Name of Talk: [GitHubExamples](https://github.com/JamieBort/TalksPresentationsWorkshops/tree/master/GitHubExample)
 ```
-Descrition: 
+Descrition: For the December 13, 2017 Triangle Adult Junior Developers' "Speakers & Discussion: Making a Smooth Transition into Tech + Version Control" meetup
 ```
 
 Name of Talk: [TheJavaScriptCallStackHoistingAndRelatedTopics](https://github.com/JamieBort/TheJavaScriptCallStackHoistingAndRelatedTopics)
