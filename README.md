@@ -1,4 +1,10 @@
+# Talks Presentations Workshops Resources
 
+To be moved to this repo:
+https://docs.google.com/document/d/1Ty843tUH76rqN3I_Vfqdi3B3HqE0_23BkxCvPOJEfW0/edit#heading=h.toil46col8cy
+
+---
+NOTE: The below was copied to the `copy_README.md` file.
 
 Name of Talk: [FundamentalsOfD3.js](https://github.com/JamieBort/TalksPresentationsWorkshops/tree/master/FundamentalsOfD3.js)
 ```
