@@ -1,4 +1,4 @@
-# Talks Presentations Workshops Resources
+# Talks_Presentations_Workshops_and_Resources
 
 To be moved to this repo:
 https://docs.google.com/document/d/1Ty843tUH76rqN3I_Vfqdi3B3HqE0_23BkxCvPOJEfW0/edit#heading=h.toil46col8cy
