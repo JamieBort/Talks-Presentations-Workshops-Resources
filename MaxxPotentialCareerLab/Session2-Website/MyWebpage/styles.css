@@ -1,0 +1,27 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    border: black solid 1px;
+}
+
+#banner {
+
+    border: red solid 1px;
+}
+
+#content {
+    border: black solid 1px;
+    background: aqua;
+}
+
+.content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+p {
+    /* border-color: black solid 3px; */
+    /* border: black solid 3px;
+    background: aqua; */
+    /* border-color: 1px black solid; */
+}

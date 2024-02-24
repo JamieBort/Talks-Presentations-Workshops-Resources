@@ -1,0 +1,166 @@
+<html>
+  <head>
+    <!-- This goes in the text at the top of your tab -->
+    <title>Example code for mockup</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Some people have old browsers and need to get the fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Roboto" rel="stylesheet">
+    <!-- we can use Open+Sans too, but we shouldn't load all 3 or load times will be slow -->
+  </head>
+  <body>
+    
+    <!--
+      Some notes:
+        * Helvetica fonts are paid fonts, so whe want to use something free, 
+          I use Roboto most of the time and Roboto looks like Helvetica Neue, so let's try that
+        
+        * We are using Bootstrap 3.3.7 found on https://getbootstrap.com/ and we modified
+        it a little, changing colors where needed.
+        
+        * We also have custom CSS running within the HTML because we don't need to modify
+          everything on the CSS file. 
+        * If you want, you can move the modifications onto this 
+          html file instead
+          
+        * When we modified the Bootstrap CSS, we modified bootstrap.css found in the css
+          folder, no other files were modified
+      -->
+    
+    <!-- Here I modified the color for navbar-default in bootstrap.css (located in the css folder) -->
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <!--<a class="navbar-brand" href="#">Project name</a>-->
+          <!-- This is like a break, but smaller --> 
+          <div>
+            <p>    </p>
+          </div>
+          <img src="img/Company-Logo.png" width="150px" height="80px"></img>
+          <div>
+            <p>    </p>
+          </div>
+        </div>
+        <!-- This the the other part of the navbar, we split because organization -->
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          </ul>
+          <!-- This goes on the right -->
+          <ul class="nav navbar-nav navbar-right">
+            <b>
+                <!-- This here is the first time we use custom fonts (refrenced above), I define their usage in the style attribute -->
+                <h3 style="font-family:'Roboto Bold', sans-serif;">Hello, I'm Sam</h3>
+            </b>
+            <p style="font-family:'Roboto', sans-serif;">Web Designer</p>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </nav>
+    <!-- end of navbar -->
+    
+
+    <!-- I wanted to dedicate some more notes to the actual "site" part
+
+        * I have used div tags everywhere, these are helpful for custom css, organization, javscript, and categorization 
+
+        * Thus part contains the most custom CSS, the colors for the hr tag are in http://afroraydude.com/one-off-sites/css/bootstrap.css 
+          and the rest of the stuff should be changed in the style attribute.
+
+        * My advice would be to look at the style attributes that I used, get to know them and how they work. I did have to force a lot 
+          sizes for things here. I also did CSS cropping, instead of using an external program. Learning about how this works is a good idea.
+
+    -->
+
+
+    <!-- we dont have a container because we want part of the picture to be cut off 
+      by the navbar because that is what it looks like in the mockup -->
+    <!-- We are also using custom CSS found under the style attribute -->
+    <div style="width: inherit; height: 300px; overflow: hidden;"> 
+      <img src="img/hero1.jpg" width="100%" style="margin: -35% 0 0 0;"></img>
+    </div>
+    
+    <!-- the container is here, you put the web content into it -->
+    <div class="container">
+      
+      <!-- Create a section for the title, place the title and center it -->
+      <div id="title">
+        <center>
+          <h1 style="font-family:'Roboto Bold', sans-serif;">Portfolio</h1>
+        </center>
+      </div>
+      
+      <!-- ids are refrence points, we use them to describe the content and for javascript -->
+      <div id="site-content">
+        
+        <!-- col-md-4 refers to the size of the section, and the max is 12 for the number 
+             (you would use 12 if you wanted to take the whole width of the page -->
+        <!-- col-md-4 is a third of the page -->
+        <div class="col-md-4">
+          <!-- I modified the size of and the color of the hr (horizontal rule) -->
+          <hr>
+          <center>
+            <h2 style="font-family:'Roboto Light', sans-serif;">Technoline</h2>
+            <i>
+              <h2 style="font-family:'Libre Baskerville Italic', serif; color: #BB1F25">technoline.com</h2>
+            </i>
+          </center>
+          <!-- We want to custom modify the horizontal rule -->
+          <hr style="background-color: #0D4B6E; border-color: #0D4B6E; height: 4px;">
+          <!-- height will be automatically changed according to width unless otherwise specified, 
+               we specified otherwise by placing the hight attribute-->
+          <img src="img/company photo1.jpg" width="100%" height="200px" style="max-height: 200px;"></img>
+        </div>
+        
+        <div class="col-md-4">
+          <!-- repeat above and change some stuff -->
+          <hr>
+          <center>
+            <h2 style="font-family:'Roboto Light', sans-serif;">Majestique</h2>
+            <i>
+              <h2 style="font-family:'Libre Baskerville Italic', serif; color: #BB1F25">majestique.com</h2>
+            </i>
+          </center>
+          <hr style="background-color: #0D4B6E; border-color: #0D4B6E; height: 4px;">
+          <!-- we do want the pictures to be the same size -->
+          <img src="img/company photo2.jpg" width="100%" height="200px" style="max-height: 200px;"></img>
+        </div>
+        
+        <div class="col-md-4">
+          <hr>
+          <center>
+            <h2 style="font-family:'Roboto Light', sans-serif;">Silverzim</h2>
+            <i>
+              <h2 style="font-family:'Libre Baskerville Italic', serif; color: #BB1F25">silverzim.com</h2>
+            </i>
+          </center>
+          <hr style="background-color: #0D4B6E; border-color: #0D4B6E; height: 4px;">
+          <img src="img/company photo3.jpeg" width="100%" height="200px" style="max-height: 200px;"></img>
+        </div>
+      </div>
+    </div>
+    <!-- we want the footer to span across the whole page, so we moved it out of the container -->
+    
+    <!-- Lets make a break that will fully split the site's content with the footer, 300px is chosen at random, 
+         its not too big, not too small -->
+    <br style="height: 300px"> 
+
+    <!-- And last but not least, the footer -->
+    <!-- In it we modify a whole bunch of stuff, starting with the background color, then we make it a certain height
+        we follow this by changing the text color and the font family, along with its size. -->
+    <footer style="background-color: #3D3D3D; height: 125px">
+      <center>
+          
+        <h2 style="color: #ffffff; padding-top: 50px; font-family:'Roboto Light', sans-serif; font-size: 25px">&copy 2016 <u>Sam's Web Dev</u> All Rights Reserved.</h2>
+      </center>
+    </footer>
+  </body>
+</html>
